@@ -87,5 +87,10 @@ esc("el total general vedido es", total_general)
 esc("el procentaje destado es", ((total_destacado/total_general)*100))
 
 finaccion
+//git status
+//git add .
+//git commit -m "Agrego el algoritmo de promedio"
+//git push origin main
+
 
 
