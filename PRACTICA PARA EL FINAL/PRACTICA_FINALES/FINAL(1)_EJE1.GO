@@ -2,6 +2,7 @@ Accion es
 	//numero_clinica(4)nombre_cliente_(finaliza con "-")numero_especialida[10...11]codigo_cobertura[0..9]dia_atendido(L,M,V)
 	sec:secuencia de caracter
 	v:caracter
+	opcion:entero
 
 	entrada=regsitro 
 		N°_historial:AN(4)
@@ -120,9 +121,48 @@ Accion es
 
 	procedimiento informar() es 
 		para i:=0 a 9 hacer 
-			esc("el paciente ", i , ) 
-	finprocedimiento
+			esc("el paciente ", i , 'y tiene la cobertura de', cobertura[i] ) 
+			finprocedimiento
+			si menor_cober < cobertura[i] entonces 
+				menor:menor_cober
+				menor_cober:cobertura[i]
+			finsi 
+		finpara 
+		
+		para i:=10 a 29 hacer 
+			esc("el paciente",  i "tiene la especialidad", especialida[i])
+			
+			si espe_mayor > especialidad[i] entonces 
+				mayor:espe_mayor 
+				espe_mayor:especialida[i]
+			finsi 
+		finpara 
+	finprocedimeinto 
 
+	proceso 
+
+		prim_E:nil 
+		prim_s:=nil
+		menor_cober:LV
+		espe_mayor:HV
+		menor:=0
+		mayor:=0
+		cargar()
+		repetir 
+			esc("ingrese 1= para ordenar,2=para bsucar un paciente, 3=para informar")
+			leer(opcion)
+			segun (opcion) hacer 
+				"1" = pasar()
+				"2" = Buscar()
+				"3" = informar()
+			finsegun
+			esc("desea salir si/no ")
+			leer(opcion2)
+		hasta opcion2="si"
+	finproceso
+finaccion 
+		
+	
 
 
 
