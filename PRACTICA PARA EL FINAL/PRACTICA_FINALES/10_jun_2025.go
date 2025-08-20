@@ -91,6 +91,8 @@ finaccion
 //git add .
 //git commit -m "Agrego el algoritmo de promedio"
 //git push origin main
+//si no anda nada a lo bruto git push origin main --force
+
 
 
 

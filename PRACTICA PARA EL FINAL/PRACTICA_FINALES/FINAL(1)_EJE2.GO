@@ -19,7 +19,7 @@ ACCION ES
 
 		res_pais,res_equipos:alfanumerico
 		procedimeinto corte_equipos() es 
-			esc("el tiempo del equipo ", res_equipos "es de:" total)
+			esc("el tiempo del equipo ", res_equipos "es de:" reg.total)
 			total_pais:=total_pais + total
 			total:=0
 			si bandera entonces 
