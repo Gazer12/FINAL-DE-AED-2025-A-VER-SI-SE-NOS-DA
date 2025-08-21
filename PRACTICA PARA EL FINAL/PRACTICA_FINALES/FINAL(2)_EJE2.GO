@@ -52,7 +52,7 @@ accion es
 		abrir e/(arch)
 		leer(arch,reg)
 		prim:=nil
-		mientras NFDA(arch) y NFDS(sec) hacer 
+		mientras NFDA(arch) y (v<>"*") hacer 
 			mientras v<>"+" hacer 
 				num:=num *10 + conv(v)
 				avz(sec,v)
