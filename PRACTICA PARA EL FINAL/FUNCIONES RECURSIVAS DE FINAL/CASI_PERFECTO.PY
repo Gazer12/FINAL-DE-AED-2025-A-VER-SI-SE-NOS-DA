@@ -30,7 +30,7 @@ funcion casi(num1,suma,num2:entero)->boleano
             casi:=falso
         finsi
     sino 
-        si ((num1 mod 10)=0) entonces 
+        si ((num1 mod num2)=0) entonces 
             casi(num1,suma+num2,num2-1)
         sino 
             casi(num1,suma,num2-1)

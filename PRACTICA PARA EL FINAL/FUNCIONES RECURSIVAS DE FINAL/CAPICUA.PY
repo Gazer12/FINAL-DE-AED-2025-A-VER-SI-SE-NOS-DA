@@ -11,7 +11,7 @@ def es_capicua(num1,num2,num_og:int)-> bool:
 
 print("Ingrese un numero para ver si es capicua o no: ")
 numero=int(input())
-
+ 
 if es_capicua(numero, 0, numero):
     print("El numero es capicua")
 else:
