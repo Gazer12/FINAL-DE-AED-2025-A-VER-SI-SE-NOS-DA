@@ -32,6 +32,6 @@ funcion es_capicua(num1,num2,num_og:entero)->boleano
 finfuncion
 """
 
+
         
 
-   
