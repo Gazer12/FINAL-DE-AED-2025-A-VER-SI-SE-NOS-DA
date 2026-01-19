@@ -57,24 +57,25 @@ ACCION ES
 				prim:=q
 				*q.prox:=nil
 			sino
-				aux:prim
-				si prim=q entonces 
+				p:=prim
+				ant:=nil
+				mientras (p<>nil) y (*q.dia>*p.dia) y (*q.n_historial>*p.n_historial) hacer 
+					ant:=p
+					p:=*p.prox
+				finmientas
+				si prim=p entonce 
 					prim:=q 
-					*q.prox:=aux
+					*q.prox:=p 
 				sino
-					p:=prim
-					mientras (p<>nil) y (*q.dia>*p.dia) y (*q.n_historial>*p.n_historial) hacer 
-						ant:=p
-						p:=*p.prox
-					finmientas
 					si p=nil entonces 
 						*ant.prox:=q
 						*q.prox:=nil 
 					sino 
 						*ant.prox:=q 
 						*q.prox:=p
-					finsi 
-				fins 
+				 
+					finsi
+				finsi 
 			finsi 
 		finprocedimeinto
 		procedimeinto buscar() es 
