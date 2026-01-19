@@ -156,9 +156,7 @@ Proceso
 
         Leer(arch_v, reg_v)
     FinMientras
-
-
-
+	
     mostrar_ranking()
 
     Cerrar(arch_v)
