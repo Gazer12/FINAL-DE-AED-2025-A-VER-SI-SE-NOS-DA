@@ -24,15 +24,15 @@ accion es
 		funcion entero(x:entero)->entero 
 			segun x hacer 
 				"0". conv:=0
-				"1". conv:=0
-				"2". conv:=0
-				"3". conv:=0
-				"4". conv:=0
-				"5". conv:=0
-				"6". conv:=0
-				"7". conv:=0
-				"8". conv:=0
-				"9". conv:=0
+				"1". conv:=1
+				"2". conv:=2
+				"3". conv:=3
+				"4". conv:=4
+				"5". conv:=5
+				"6". conv:=6
+				"7". conv:=7
+				"8". conv:=8
+				"9". conv:=9
 			finsegun
 		finfuncion
 		bandera1,bandera2:booleano

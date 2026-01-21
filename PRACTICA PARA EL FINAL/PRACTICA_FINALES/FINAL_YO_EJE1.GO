@@ -28,7 +28,7 @@ AMBIENTE
     arch_v : archivo de ventas ordenado por clave
     reg_v  : ventas
 
-    arch_c : archivo indexado de comisiones
+    arch_c : archivo indexado de comisiones ordenado por clave
     reg_c  : comisiones
 
     res_vendedor : entero
@@ -64,24 +64,27 @@ FinProcedimiento
 
 Procedimiento carga_ordenada_ranking(vend : entero, com : real) ES
     Nuevo(p)
-    p.codvendedor := vend
-    p.comision    := com
-    p.prox        := NIL
+    *p.codvendedor := vend
+    *p.comision    := com
 
-    a := NIL
-    q := Prim
-
-    Mientras (q <> NIL) Y (q.comision > com) hacer
-        a := q
-        q := q.prox
-    FinMientras
-
-    Si a = NIL entonces
-        p.prox := Prim
+    Si prim = NIL entonces
         Prim   := p
-    Sino
-        p.prox := q
-        a.prox := p
+        p.prox := nil
+    sino 
+        q := Prim
+
+        Mientras (q <> NIL) Y (q.comision > com) hacer
+            a := q
+            q := q.prox
+        FinMientras
+        si q=nil entonces 
+            *a.prox:=p 
+            *.prox:=nil 
+        sino 
+            *a.prox:=p 
+            *p.prox:=a 
+        finsi 
+        
     FinSi
 FinProcedimiento
 
@@ -150,8 +153,13 @@ Proceso
 
         Si (reg_v.fecha_venta.mes = mes_actual) Y (reg_v.fecha_venta.año = año_actual) entonces
             total_producto := total_producto + (reg_v.cantidad * reg_v.precio)
-
-            total_comision := total_comision +(reg_v.cantidad * reg_v.precio) * reg_c.comision
+            
+            reg_c.codproducto:=reg_v.codproducto
+            reg_c.codvendedor:=reg_v.codvendedor
+            leer(arch_c,reg_c)
+            Si EXISTE  entocnes 
+                total_comision := total_comision +(reg_v.cantidad * reg_v.precio) * reg_c.comision
+            finsi
         FinSi
 
         Leer(arch_v, reg_v)
