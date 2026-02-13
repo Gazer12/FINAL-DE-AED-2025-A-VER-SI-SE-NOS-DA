@@ -14,8 +14,7 @@ ACCION ES
 		can:arreglo [1..10] de entero 
 		noche:=arreglo [1..10] de entero 
 
-		nodo=registro 
-			codigo:N(5)
++			codigo:N(5)
 			titulo:AN(30) 
 			costo:N(4,2)
 			cod_categoria:[1..10]

@@ -95,7 +95,7 @@ ACCION ES
 			C[conv(v)]:=C[conv(v)] + 1
 			crear()
 			avz(sec,v)//parado en las horas
-			si v>2 entonces 
+			si entero(v)>2 entonces 
 				bandera1:=verdader 
 			finsi 
 			crear()
